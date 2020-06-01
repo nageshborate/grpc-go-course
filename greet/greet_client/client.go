@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"google.golang.org/grpc"
 	"log"
 	"github.com/nageshborate/grpc-go-course/greet/greetpb"
@@ -11,6 +12,9 @@ func main() {
 	if err != nil {
 		log.Fatalf("could not connect %v", err)
 	}
+	defer clientConnection.Close()
 
+	greetpb.NewGreetServiceClient(clientConnection)
 
+	fmt.Println("created client %f", clientConnection)
 }
