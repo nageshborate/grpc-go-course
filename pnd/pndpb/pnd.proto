@@ -4,11 +4,11 @@ package pnd;
 option go_package = "pnd/pndpb";
 
 message PrimeNumberDecompositionRequest {
-  int32 inputNumber = 1;
+  int64 inputNumber = 1;
 }
 
 message PrimeNumberDecompositionResponse {
-  int32 result = 1;
+  int64 result = 1;
 }
 
 service PrimeNumberDecompositionService {
