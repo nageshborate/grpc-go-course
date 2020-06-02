@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package calc;
+option go_package = "calc/calcpb";
+
+message Calculator {
+  string first_name = 1;
+  string last_name = 2;
+}
+
+message AdditionRequest {
+  int32 number1 = 1;
+  int32 number2 = 2;
+}
+
+message AdditionResponse {
+  int32 result = 1;
+}
+
+service CalculatorService{
+  rpc Add(AdditionRequest) returns (AdditionResponse) {};
+}
